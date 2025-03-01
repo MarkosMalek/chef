@@ -4,15 +4,23 @@ import GetRecipe from "./getRecipeCard";
 import AddIngredient from "./addIngredient";
 import Recipe from "./recipe";
 import { fetchRecipe } from "../ai";
+import { isValidIngredient } from "../isValid";
+
 function MainComponent() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState(null);
 
   const recipeSection = useRef(null);
 
-  const addToList = (FormData) => {
+  const addToList = async (FormData) => {
     const ingredient = FormData.get("ingredient")?.trim();
-    if (ingredient && ingredient !== "") {
+    const valid = await isValidIngredient(ingredient);
+    if (
+      valid &&
+      ingredient !== "" &&
+      ingredient.length > 2 &&
+      ingredient !== "aaa"
+    ) {
       console.log(ingredient);
       setIngredients((ingredients) => [...ingredients, ingredient]);
     } else alert("please enter a valid ingredient");
