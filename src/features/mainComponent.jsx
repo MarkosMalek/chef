@@ -11,8 +11,11 @@ function MainComponent() {
   const recipeSection = useRef(null);
 
   const addToList = (FormData) => {
-    const ingredient = FormData.get("ingredient");
-    setIngredients((ingredients) => [...ingredients, ingredient]);
+    const ingredient = FormData.get("ingredient")?.trim();
+    if (ingredient && ingredient !== "") {
+      console.log(ingredient);
+      setIngredients((ingredients) => [...ingredients, ingredient]);
+    } else alert("please enter a valid ingredient");
   };
 
   useEffect(() => {
