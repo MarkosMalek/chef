@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="header">
       <img src={logo} alt="chef-logo" />
-      <h1>Chef Markos</h1>
+      <h1>Huggingface AI Chef</h1>
     </header>
   );
 }

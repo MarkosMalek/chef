@@ -10,6 +10,7 @@ Chef allows users to input a minimum of four ingredients and receive an AI-gener
 - Send ingredient data to the Hugging Face API.
 - Receive and display an AI-generated recipe.
 - Simple and intuitive interface for seamless user experience.
+- To visit the website: https://chef-omega.vercel.app
 
 ## Technologies Used
 

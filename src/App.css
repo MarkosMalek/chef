@@ -8,42 +8,51 @@
   background-color: white;
   box-shadow: 0px 1px 2px 0px #0000000f, 0px 1px 3px 0px #0000001a;
   gap: 11px;
+  flex-wrap: wrap;
 }
+
 .header > img {
-  width: 40px;
-  height: 52px;
+  width: 35px;
+  height: 45px;
 }
 
 .header > h1 {
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 60px;
-  letter-spacing: -0.05em;
+  line-height: 1.2;
 }
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 3rem;
+
+  padding: 2rem;
+  max-width: 90%;
+  margin: auto;
 }
+
 .input-form {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
+
 .input {
   border: 1px solid #d1d5db;
   box-shadow: 0px 1px 2px 0px #0000000d;
-  margin: 0 1rem;
   padding-left: 1rem;
   font-family: sans-serif;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   background: #ffffff;
   border-radius: 1rem;
-  min-width: 280px;
+  min-width: 250px;
   flex-grow: 1;
-  max-width: 30rem;
+  max-width: 100%;
 }
+
 button {
   background-color: #0f0f0f;
   padding: 10px;
@@ -54,83 +63,67 @@ button {
   font-family: sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  min-width: 1rem;
+  min-width: 80px;
+  cursor: pointer;
 }
 
+/* Responsive Ingredient List */
 .ingredients-List {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  height: 16rem;
+  max-width: 100%;
+  margin: auto;
 }
+
 .ingredients-List > ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: column;
   grid-template-rows: repeat(4, 1fr);
+  padding: 0;
   list-style: none;
-  margin-left: -2.5rem;
-  gap: 1rem;
 }
 
 .ingredients-List > h1 {
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 1.8rem;
   font-weight: 600;
-  height: 38px;
-  text-underline-position: from-font;
+  text-align: center;
 }
 
 .ingredients-List > ul > li {
   font-family: sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  height: 28px;
   color: #475467;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
 }
-
 .ingredients-List > ul > li::before {
   content: "\2022";
   display: inline-block;
   width: 0.7rem;
 }
-
 .getRecipe-card {
   background-color: #f0efeb;
-  height: 108px;
-  border-radius: 8px;
-  padding: 7px 50px;
+  padding: 10px;
   margin: 5px;
+  border-radius: 8px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
 .getRecipe-card > button {
-  padding: 9px 17px 9px 17px;
+  padding: 9px 17px;
   border: none;
   border-radius: 6px;
   background-color: #d17557;
-  min-width: 1rem;
   color: #fafaf8;
   font-family: sans-serif;
   font-size: 1rem;
   font-weight: 500;
-}
-.getRecipe-card > section > h2 {
-  font-family: sans-serif;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #141413;
-}
-.getRecipe-card > section > p {
-  color: #6b7280;
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 2px;
 }
 
 .recipe-container {
@@ -138,15 +131,55 @@ button {
   font-family: sans-serif;
   color: #475467;
 }
-
+.recipe-container p {
+  color: #141413;
+  font-size: 1.6rem;
+}
 .recipe-container h2 {
   color: #141413;
+  font-size: 1.6rem;
 }
+
 .recipe-container h3 {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  font-size: 1.3rem;
 }
+
 .recipe-container ol li p,
 .recipe-container ul li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header > h1 {
+    font-size: 1.5rem;
+  }
+
+  .input {
+    font-size: 1rem;
+    min-width: 100%;
+  }
+
+  .ingredients-List > h1 {
+    font-size: 1.5rem;
+  }
+
+  .ingredients-List > ul {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .recipe-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .recipe-container h3 {
+    font-size: 1.2rem;
+  }
 }
