@@ -1,0 +1,11 @@
+:root {
+  font-family: Inter;
+}
+body {
+  margin: 0;
+  background-color: #fafaf8;
+  /*
+  display: flex;
+  justify-content: center;
+*/
+}
